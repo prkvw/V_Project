@@ -12,25 +12,33 @@ contract Voting {
         string party;
         string office;
         uint age;
-
     }
+    
+    
 // Define an Appropriate Data Type to Track If Voter has Already Voted
-    bool public bool_voted = true;
-    bool public bool_notVoted = false;
-// Adds New Candidate
-function addCandidate() public {}
+    event setCount ( oldCOunt, newCount );
+    //modifier voteCount() { count < 1 , "user has voted");
+   // _;
+    //bool public hasVoted = true;
+   function Count () public hasNotVoted = false returns bool };
+    if Count = false; count --;
+//Adds New Candidate
+    function addCandidate() public {}
 
 // Removes Already Added Candidate
-function removeCandidate() public {}
+    function removeCandidate() public {}
 
 // Retrieves All Candidates for Viewing
-function getAllCandidates()  public pure returns ( uint){
-        //string storage lastName;
-        uint  age;
+    function getAllCandidates()  public pure returns ( string calldata, uint){
+        [string calldata name,
+        uint  age];
 
-        return (age);
-}
-}
+        return (name, age);
+    };
+
 
 // Allows Voter to Cast a Vote for a Single Candidate
-//function castVote() public {};
+async function castVote() public returns bool {
+    emit voteCount (+1)_;
+
+};
