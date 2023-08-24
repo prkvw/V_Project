@@ -1,0 +1,2 @@
+Vote.sol smart contract
+
