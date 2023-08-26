@@ -28,7 +28,7 @@ contract Voting {
     };
 
 // Removes Already Added Candidate
-    function removeCandidate() public {
+    function removeCandidate() public { return (arr)
 
     };
 
@@ -37,7 +37,7 @@ contract Voting {
         string calldata name,
         uint  age;
 
-        return (arr);
+        return (arr)
     }
 }
 
