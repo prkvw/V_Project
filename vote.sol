@@ -17,15 +17,12 @@ contract Voting {
     mapping(address => bool) public voters;
 
     uint public candidateCount;
-// Define an Appropriate Data Type to Track If Voter has Already Voted
-//     event setCount ( oldCOunt, newCount );
-//     modifier voteCount() {require (count < 1 , "user has voted");
-//    _; 
-    //bool public hasVoted = true;
-   //contract Voting is voting Count () public hasNotVoted = false returns bool
-   // if (false){ count -- }
+
 // Adds New Candidate
-    function addCandidate(string memory _name, string memory _party) public {
+    constructor () {
+        candidateCount = 0;
+    }
+function addCandidate(string memory _name, string memory _party ) public{
         candidateCount++;
         candidates[candidateCount] = Candidate(_name, _party, 0);
     }
@@ -33,10 +30,11 @@ contract Voting {
 // Removes Already Added Candidate
      function deleteCandidate(uint _candidateId) public {
         require(_candidateId > 0 && _candidateId <= candidateCount, "Invalid candidate ID");
-        candidateCount-1 ;
+        candidateCount= candidateCount-1;
         delete candidates[_candidateId];
         
     }
+    
 
 // Retrieves All Candidates for Viewing
     function getCandidates() public view returns (Candidate[] memory) {
@@ -46,6 +44,7 @@ contract Voting {
         }
         return allCandidates;
     }
+    
 
 // Allows Voter to Cast a Vote for a Single Candidate
      function vote(uint candidateID) public {
