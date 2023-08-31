@@ -1,11 +1,24 @@
 Vote.sol 
-- A Smart Contract in solidity.
 
+# Solidity Project
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
-- Contract Functionality
+# Contract Functionality
+
     -  Store Candidates
     -   Track If Voter has Already Voted
     -   Adds New Candidate
     -   Removes multiple candidate entry
     -   Retrieves All Candidates for Viewing
     -   Allows Voter to Cast immutable Vote for one Candidate only
+
+# User Instructions
+
+# Contributions
+Feel free to tweak this project for your specific designs.
+
+# Find a bug 
+ If you find a bug, feel free to submit an issue using the tab above.
+
+ # Known Issues
+ There are two versions of voting contracts in this project. Tests were written for first version, and labelled for that specific contract. Running both tests simultaneously will present results for both versions asynchronously.
