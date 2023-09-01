@@ -18,23 +18,39 @@ contract Voting {
     uint totalVotes;
     // Contract Owner
     address owner;
+    address ec;
 
     constructor() {
         owner = msg.sender;
     }
 
-    // Register Voter
-    function registerVoter(address voterAddress) public {
+    //modifier to check if is ec
+    modifier isEC() {
+        require(ec == msg.sender, "Not Electoral commissioner!");
+        _;
+    }
+
+    //modifier to check if is owner
+    modifier isOwner() {
+        require(owner == msg.sender, "Not owner!");
+        _;
+    }
+
+    //register EC
+    function registerEC(address ecAddress) public isOwner {
         // Check If Sender is Owner
-        require(owner == msg.sender, "Not Owner!");
         // Register
+        ec = ecAddress;
+    }
+
+    // Register Voter
+    function registerVoter(address voterAddress) public isEC {
+             // Register
         voters[voterAddress] = true;
     }
 
     // Add Candidate
-    function addCandidate(address candidateAddress, string memory name) public {
-        // Check If Sender is Owner
-        require(owner == msg.sender, "Not Owner!");
+    function addCandidate(address candidateAddress, string memory name) public isEC{
         // Add Candidate
         candidates[candidateAddress] = Candidate(candidateAddress, name, 0);
     }

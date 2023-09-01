@@ -52,6 +52,10 @@ npm install
     ```sh
     cp .env_example .env
     ```
+5. Create a package - Initialise node package manager
+    ```sh
+    npm init
+    ```
 6. Compile the contracts:
 ```sh
 npx hardhat compile
@@ -75,7 +79,7 @@ npx hardhat run scripts/deploy.ts --network mumbai
 
 1. Connect to the Ethereum network using a wallet like MetaMask.
 
-2. Interact with the dapp through your command line, a synced blockchain explorer, or integrate with your own front-end application.
+2. Interact with the dapp through a command line, a synced blockchain explorer, or integrate with your own front-end application.
 
 3. # Contract Functionality
 
@@ -103,6 +107,9 @@ We welcome contributions from the community! To contribute to My Blockchain Dapp
  npx hardhat test
  ```
 
+# Known Issues
+ There are two versions of voting contracts in this project. Tests were written for the both versions. Running npx hardhat test will present results for both versions asynchronously.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
@@ -111,5 +118,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 If you have any questions or need assistance, you can reach us at `info@mowblock.com`.
 
- # Known Issues
- There are two versions of voting contracts in this project. Tests were written for first version, and labelled for that specific contract. Running both tests simultaneously will present results for both versions asynchronously.
+ 
