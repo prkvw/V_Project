@@ -1,6 +1,9 @@
 ## Voting dApp
 
+<<<<<<< HEAD
 # Solidity Project
+=======
+>>>>>>> 70456bdf9520bfaf766ce664c1b1c3f6c9bef882
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
 
@@ -116,4 +119,10 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
+<<<<<<< HEAD
  
+=======
+If you have any questions or need assistance, you can reach us at `info@mowblock.com`.
+
+ 
+>>>>>>> 70456bdf9520bfaf766ce664c1b1c3f6c9bef882
