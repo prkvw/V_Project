@@ -117,12 +117,4 @@ We welcome contributions from the community! To contribute to My Blockchain Dapp
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Contact
 
-<<<<<<< HEAD
- 
-=======
-If you have any questions or need assistance, you can reach us at `info@mowblock.com`.
-
- 
->>>>>>> 70456bdf9520bfaf766ce664c1b1c3f6c9bef882
