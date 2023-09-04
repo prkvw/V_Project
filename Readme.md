@@ -1,4 +1,4 @@
-## Voting dApp
+## dApp
 
 
 # Solidity Project
