@@ -41,7 +41,9 @@ describe("Donate Contract", function () {
     expect(org.goalAmount).to.equal(orgGoalAmount);
     expect(org.currentAmount).to.equal(0); // Initial currentAmount should be zero
   });
+// test active donation activity status from stopCampaign function
 
+    //test balance update after donation
 
   // Add more test cases for other functions
 });
