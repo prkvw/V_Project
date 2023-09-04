@@ -1,3 +1,7 @@
+import { loadFixture } from "@nomicfoundation/hardhat-toolbox/network-helpers";
+import { ethers } from "hardhat";
+
+
 const {
     time,
     loadFixture,
@@ -37,6 +41,7 @@ describe("Donate Contract", function () {
     expect(org.goalAmount).to.equal(orgGoalAmount);
     expect(org.currentAmount).to.equal(0); // Initial currentAmount should be zero
   });
+
 
   // Add more test cases for other functions
 });
