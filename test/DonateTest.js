@@ -44,6 +44,8 @@ describe("Donate Contract", function () {
 // test active donation activity status from stopCampaign function
 
     //test balance update after donation
-
-  // Add more test cases for other functions
+    it("should confirm withdrawal", async function () {
+    const { donation, donor, beneficiary } await loadFixture (deployDonationFixture);  
+        await donation. connect(donor).donate"test donation", { value: parseEther ("1.0") };
+        (beneficiary).withdraw();
 });
