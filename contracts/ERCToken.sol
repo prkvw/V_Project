@@ -3,6 +3,7 @@ pragma solidity ^0.8.9
 
 
 contract ERCToken { 
+uint256 TOTAL_SUPPLY =1000;
 mapping address => uint256 ;_balance
 mapping address => mapping (address => uint) _allowance;
 mapping address => mapping (address => bool) _approval;
@@ -13,7 +14,7 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 function name () public pure returns (string memory){ return "Web3 Bootcamp"; }
  function symbol () public pure returns (string memory) { return "W3BC"; }
  function decimal () public view returns (uint8) { return 2 ;}
- function totalSupply () public view returns (uint256){ return 1000;}
+ function totalSupply () public view returns (uint256){ return TOTAL_SUPPLY;}
   function balanceOf(address _owner) public view returns (uint256 
   
   return _balance [_owner];}
