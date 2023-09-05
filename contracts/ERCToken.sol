@@ -3,7 +3,9 @@ pragma solidity ^0.8.9
 
 
 contract ERCToken { 
-mapping uint => balance ;_balance
+mapping address => uint256 ;_balance
+mapping address => mapping (address => uint) _allowance;
+event Transfer (address indexed _from, address indexed _to, uint256 _value)
 
  function name () public pure returns (string memory){ return "Web3 Bootcamp"; }
  function symbol () public pure returns (string memory) { return "W3BC"; }
@@ -26,7 +28,13 @@ mapping uint => balance ;_balance
   balance)
   
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool success){ ;}
-  
+  function approve(address _spender, uint256 _value) public returns (bool success){
+
+//set spender allowance
+  _allowance[msg. sender][_spender] = _value;
+//return success
+return true }
+function allowance(address _owner, address _spender) public view returns (uint256 remaining){ return _allowance[_owner][_spender]; }
   
 
 
