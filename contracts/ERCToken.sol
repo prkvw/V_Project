@@ -16,26 +16,41 @@ event Transfer (address indexed _from, address indexed _to, uint256 _value)
   return _balance [_owner];}
   function transfer(address _to, uint256 _value) public returns (bool success){
   // check
-  require _balance[msg.sender] >= _value
+  require _balance[msg.sender] >= _value;
   //decrease caller
-  _balance[msg.sender] -= _value
+  _balance[msg.sender] -= _value;
   //increase recepient
   _balance[_to] += _value
   //balance transfer event
-  emit Transfer(msg.sender, _to, _value)
+  emit Transfer(msg.sender, _to, _value);
   //return success
-  { return true ;}
-  balance)
+  return true ;}
   
-  function transferFrom(address _from, address _to, uint256 _value) public returns (bool success){ ;}
-  function approve(address _spender, uint256 _value) public returns (bool success){
+  
+   function approve(address _spender, uint256 _value) public returns (bool success){
 
 //set spender allowance
   _allowance[msg. sender][_spender] = _value;
 //return success
 return true }
 function allowance(address _owner, address _spender) public view returns (uint256 remaining){ return _allowance[_owner][_spender]; }
-  
+  function transferFrom(address _from, address _to, uint256 _value) public returns (bool success){ 
+ //check is sender is approved
+require (_allowance[_from][msg.sender] >= value, "Insufficient allowance");
+//check enough balance
+require (_balance[_from] >= _value, "Insufficient balance");
+// decrease from balance
+_balance[_from] -= _value;
+// increase to balance
+_balance[_to] += _value;
+//decrease spender allowance
+_allowance[_from][_msg.sender] -= _value;
+//emit transfer event
+emit Transfer (_from, _to, _value);
+
+//return success
+return true ;}
+
 
 
 }
