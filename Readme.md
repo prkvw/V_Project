@@ -1,10 +1,9 @@
-## dApp
+## Vote
 
 
-# Solidity Project
+# Solidity
 =======
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
 
 ## Table of Contents
@@ -19,7 +18,8 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 
 ## Overview
 
-My Blockchain Dapp enables users to interact with the Ethereum blockchain by participating in a voting process for different candidates. Users can add candidates, cast votes, and view the current vote count for each candidate.
+Vote enables users to interact with the Ethereum blockchain by participating in a voting process for different candidates. 
+Users can add candidates, cast votes, and view the current vote count for each candidate.
 
 ## Prerequisites
 
