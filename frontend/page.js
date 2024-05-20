@@ -26,7 +26,55 @@ async function fetchQuestionsAndSubmissions () {
     ]);
 }
 
+function getQuestionsByCategory[questions] {
+    const questionsByCategory = {};
+    questions.forEach(question =>{
+        if (questionByCategory.hasOwnProperty(question.category)) {
+            questionsByCategory[question.category].push(question);
+        }else { questionsByCategory[question.category]= [question];}
+    });
+    return QuestionsByCategory
+}
 
+
+function createCategory(createCategory, questions, submissionsById ) {
+    const categoryDiv = document.createElement("div");
+    categoryDiv.classList.add('category');
+   let correctCount = 0;
+   // h2.textContent = category;
+    
+    questions.forEach(question => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add('question');
+        const status = document.createElement('div');
+        status.classList.add('status');
+        const statusClass = submissionsById[question.id]?.toLowerCase()?.replace('_', '-');
+        status.classList.add(statusClass?? 'unattempted');
+        questionDiv.append(status);
+
+if (submissionsById[question.id] == 'CORRECT') {
+    correctCount++;
+}
+
+        const h3 = document.createElement("h3");
+        h3.textContent = question.name
+        questionDiv.append(h3);
+        categoryDiv.append(questionDiv);
+
+});
+
+const h2 = document.createElement("h2");
+h2.textContent = `${category} - ${correctCount} / ${questions.length}`
+categoryDiv.append(h2);
+return categoryDiv };
+
+function getSubmissionsById (submissions) {
+    const submissionsById = {};
+    submissions.forEach(submission => {
+        submissionsById[submission.questionId] = submission.status;
+    });
+
+}
 
 
 <div class="category">
