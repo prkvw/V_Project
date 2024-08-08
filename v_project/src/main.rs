@@ -3,7 +3,7 @@ mod network;
 #[tokio::main]
 async fn main () {
     let local_addr = "localhost:8000";
-    let remote_addr = "localhost:8001";
+    let remote_addr = "localhost:8000";
 
     //start the network listener in a separate task
     let listener_task = tokio::spawn(async move {
@@ -14,7 +14,7 @@ async fn main () {
     let connector_task = tokio::spawn(async move
     {
         network::start_network_connector(remote_addr).await.unwrap();
-    })
+    });
 
     // await both tasks
     let _ = tokio::try_join!(listener_task, connector_task);
