@@ -1,31 +1,24 @@
-use std{::io, cmp::Ordering};
- use rand::Rng;
-fn main() {
-    println!(" Guess the number");
-    let secret_number = rand::thread_rng().gen_range(1, 101);
+mod network;
 
-    loop {
-        println!("Please input your guess. ");
- 
-     let mut guess = String::new();
- 
-     io::stdin().read_line(&mut guess)
-     .expect("Error reading line");
-    
-     let guess: u32 = match guess.trim().parse() {
-        Ok(num) => num,
-        Err(_err) => {println! ("Please input a number. ");
-        continue;
-    }
-};
-    println!("you guessed : {}", guess);
+#[tokio::main]
+async fn main () {
+    let local_addr = "localhost:8000";
+    let remote_addr = "localhost:8001";
 
-     match guess.cmp(&secret_number) {
-        Ordering::Less => println!("Too small!"),
-        Ordering::Greater => println!("Too big!"),
-        Ordering::Equal => {println!("You win!");
-        break;
-    }
+    //start the network listener in a separate task
+    let listener_task = tokio::spawn(async move {
+        network::start_network_listener(local_addr).await.unwrap(); 
+    });
+
+    //start the network connector in a separate task
+    let connector_task = tokio::spawn(async move
+    {
+        network::start_network_connector(remote_addr).await.unwrap();
+    })
+
+    // await both tasks
+    let _ = tokio::try_join!(listener_task, connector_task);
 }
-}
-}
+
+
+// new features : peer discovery, message passing between peers, err(e)
