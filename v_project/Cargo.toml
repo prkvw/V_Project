@@ -1,6 +1,6 @@
 [package]
 name = "v_project"
-version = "0.1.0"
+version = "0.1.5"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -8,6 +8,10 @@ edition = "2021"
 [dependencies]
 
 rand = "0.3.14"
-tokio = { version = "1", features = ["full"]}
+tokio = { version = "1.35.1", features = ["full"]}
 futures = "0.3"
+femme = { version "2.2.1"}
+log = { version "0.4.20" }
+r3bl_rs_utils_core = { version "0.9.12"}
+r3bl_tui = { version "0.5.1"}
 async-std = "1.9"
